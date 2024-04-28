@@ -3,9 +3,12 @@ package com.epam.mjc.io;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class FileReader {
+    private static final Logger LOG = Logger.getLogger(FileReader.class.getName());
 
     public Profile getDataFromFile(File file) {
         var res = new Profile();
@@ -18,7 +21,7 @@ public class FileReader {
                 }
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            LOG.log(Level.WARNING, "Can not read file");
         }
 
         return res;
