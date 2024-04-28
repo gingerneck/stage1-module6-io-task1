@@ -44,7 +44,7 @@ public class FileReader {
                 profile.setPhone((long) getInteger(value));
                 break;
             }
-            default:{
+            default: {
                 throw new IllegalArgumentException("Bad key for profile object");
             }
         }
