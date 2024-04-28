@@ -34,12 +34,18 @@ public class FileReader {
             }
             case ("age"): {
                 profile.setAge(getInteger(value));
+                break;
             }
             case ("email"): {
                 profile.setEmail(value);
+                break;
             }
             case ("phone"): {
                 profile.setPhone((long) getInteger(value));
+                break;
+            }
+            default:{
+                throw new IllegalArgumentException("Bad key for profile object");
             }
         }
     }
